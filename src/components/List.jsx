@@ -88,14 +88,14 @@ const List = () => {
         const newCardsPromises = gists.map(async (gist) => {
           // Fetch content for each gist ID
           const contentResponse = await fetchGist(gist.id);
-          console.log(gist.id, contentResponse);
+          //console.log(gist.id, contentResponse);
 
           //const contentData = await contentResponse.json();
 
           const firstFileName = Object.keys(contentResponse.files)[0]; // Get the name of the first file
           const content = contentResponse.files[firstFileName].content; // Get the content of the first file
 
-          return { id: gist.id, title: firstFileName, content: content };
+          return { id: gist.id, title: firstFileName, files:  contentResponse.files };
         });
 
         //const newCards = gists.map(gist => ({ id: gist.id, title: gist.title, content: 'some code here'}));
@@ -116,7 +116,7 @@ const List = () => {
       </div>
       <div className="card-container">
         {
-          cards.map((card) => <Card title={card.title} id={card.id} content={card.content} deleteCard={deleteCard} />)
+          cards.map((card) => <Card title={card.title} id={card.id} files={card.files} deleteCard={deleteCard} />)
         }
       </div>
     </div>

@@ -82,3 +82,15 @@ button {
   flex-wrap: wrap; /* Prevent cards from wrapping to the next line */
   gap: 10px; /* Add some space between cards */
 }
+
+/* Define styles for active tab */
+.tabs button.active {
+  background-color: #ddd; /* Background color */
+  color: #333; /* Text color */
+  border-bottom: 3px solid #333; /* Bottom border */
+}
+
+/* Define styles for hidden content */
+.content > div.hidden {
+  display: none; /* Hide the content */
+}
