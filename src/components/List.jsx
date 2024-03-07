@@ -93,7 +93,6 @@ const List = () => {
           //const contentData = await contentResponse.json();
 
           const firstFileName = Object.keys(contentResponse.files)[0]; // Get the name of the first file
-          const content = contentResponse.files[firstFileName].content; // Get the content of the first file
 
           return { id: gist.id, title: firstFileName, files:  contentResponse.files };
         });
