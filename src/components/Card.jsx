@@ -1,5 +1,6 @@
 import Draggable from "react-draggable";
 import { useState, useRef } from "react";
+import { MdCreate, MdOutlineSave, MdOutlineUploadFile, MdDelete } from "react-icons/md";
 
 const Card = (props) => {
   const nodeRef = useRef(null);
@@ -19,6 +20,11 @@ const Card = (props) => {
   const handleEdit = () => {
     setText(props.files[activeTab].content);
     setIsEditing(!isEditing);
+  };
+
+  const handleCommit = () => {
+    // pass data to parent
+    props.commitCard(props.id, activeTab, text);
   };
 
   const handleSave = () => {
@@ -47,26 +53,33 @@ const Card = (props) => {
           ))}
         </div>
         <div className="content">
-          {filesArray.map((file) => (
-            <div
-              key={file.filename}
-              className={file.filename === activeTab ? "active" : "hidden"}
-            >
-              <textarea
-                className="text-input"
-                value={isEditing ? text : file.content}
-                onChange={(e) => setText(e.target.value)}
-                disabled={!isEditing} // Disable the textarea when not in edit mode
-              />
-            </div>
-          ))}
-        </div>
-        <button onClick={isEditing ? handleSave : handleEdit}>
-          {isEditing ? "Save" : "Edit"}
-        </button>
+  {filesArray.map((file) => (
+    <div
+      key={file.filename}
+      className={`${file.filename === activeTab ? "active" : "hidden"} ${isEditing ? "editing" : ""}`}
+    >
+      <textarea
+        className="text-input"
+        value={isEditing ? text : file.content}
+        onChange={(e) => setText(e.target.value)}
+        disabled={!isEditing} // Disable the textarea when not in edit mode
+      />
+    </div>
+  ))}
+</div>
 
-        <button onClick={() => props.deleteCard(props.id)}>Delete</button>
-      </div>
+      <button className="operationsbutton" onClick={isEditing ? handleSave : handleEdit}>
+        <div className="icon">{isEditing ? <MdOutlineSave/> : <MdCreate />}</div>
+      </button>
+
+      <button className="operationsbutton" onClick={handleCommit}>
+        <div className="icon"><MdOutlineUploadFile/></div>
+      </button>
+
+      <button className="operationsbutton" onClick={() => props.deleteCard(props.id)}>
+        <div className="icon"><MdDelete /></div>
+      </button>
+     </div>
     </Draggable>
   );
 };
