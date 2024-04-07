@@ -1,9 +1,22 @@
 .App {
-  padding: 15px;
+  background-color: #F8F0DF;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .content {
   padding: 5px 10px;
+}
+
+.heading {
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+  font-size: 2.5em;
+  font-weight: 750;
+  color: #31363F;
 }
 
 .card:hover {
@@ -13,7 +26,7 @@
 .header {
   border-bottom: 2px solid #333;
   padding: 5px 8px;
-  background-color: #c3d3f9;
+  background-color: #99ebda;
   text-align: center;
   font-weight: 600;
   min-height: 20px;
@@ -21,8 +34,7 @@
 
 .card {
   margin: 10px;
-  border: 1px solid #333333 transparent;
-  transition-duration: 0.219s;
+  border: 1px solid #ffffff transparent;
   width: 300px;
   height: 300px;
   min-height: 150px;
@@ -30,6 +42,23 @@
   box-shadow: 2px 2px 2px #555;
   background-color: #f5f3f3;
   border-radius: 4%;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: transparent;
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-right-color: transparent;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: transparent;
+  border-image-outset: 0;
+  border-image-repeat: stretch;
+  border-image-slice: 100%;
+  border-image-source: none;
+  border-image-width: 1;  
 }
 
 .card:hover {
@@ -52,18 +81,16 @@
   box-shadow: 10px 10px 10px #555;
 }
 
-.card:hover .operationsbutton {
+.card:hover .cardoperationsbutton {
   display: inline-block; /* Show the button when the card is hovered over */
 }
-
 
 .list {
   /* position: relative; */
   height: 100vh;
-  border: 3px solid #333;
 }
 
-.operationsbutton {
+.cardoperationsbutton {
   all: unset; /* Reset all CSS properties */
   display: none; /* Hide the button by default */
   cursor: pointer;
@@ -78,7 +105,7 @@
   display: inline-block; /* Ensure the container element has a width and height */
 }
 
-.operationsbutton:hover .icon {
+.cardoperationsbutton:hover .icon {
     width: 25px; /* Adjust as needed */
     height: 30px; /* Adjust as needed */
     background-color: #ccc; /* Grey-like color */
@@ -87,13 +114,12 @@
 }
 
 button {
-  background-color: #FFE156;
+  background-color: #ffffff;
   padding: 3px 5px;
   box-shadow: 1px 1px 2px #555;
   cursor: pointer;
   font-size: 1em;
-  /* have curved borders */
-  border-radius: 20px;
+  border-radius: 7.5px;
 }
 
 .new-card-input {
@@ -120,7 +146,6 @@ button {
   width: 670px;
 }
 
-
 .card-container {
   display: flex;
   flex-wrap: wrap; /* Prevent cards from wrapping to the next line */
@@ -130,9 +155,8 @@ button {
 
 /* Define styles for active tab */
 .tabs button.active {
-  background-color: #ddd; /* Background color */
+  background-color: rgb(208, 226, 255); /* Background color */
   color: #333; /* Text color */
-  border-bottom: 3px solid #333; /* Bottom border */
 }
 
 /* Define styles for hidden content */
@@ -156,4 +180,40 @@ textarea::-webkit-scrollbar-thumb {
 
 textarea::-webkit-scrollbar-thumb:hover {
   background: #555; /* Hover color of the thumb */
+}
+
+.list {
+  position: relative; /* Set position relative for the parent container */
+}
+
+.add-card-container {
+  position: fixed;
+  top: 40px; /* Adjust top position as needed */
+  right: 10px; /* Adjust right position as needed */
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+}
+
+.add-card-form {
+  display: flex;
+  align-items: center;
+}
+
+.token-input-container {
+  /* Add styles for the token input container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 3s ease; /* Add transition for smooth animation */  
+}
+
+.token-input {
+  width: 235px; /* Adjust width as needed */
+  padding: 5px;
+}
+
+.token-provided {
+  /* make it disappear */
+  display: none;
 }
