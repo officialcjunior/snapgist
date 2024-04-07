@@ -77,7 +77,7 @@ const Card = (props) => {
         </div>
         
         <button
-          className="operationsbutton"
+          className="cardoperationsbutton"
           onClick={isEditing ? handleSave : handleEdit}
         >
 
@@ -86,14 +86,14 @@ const Card = (props) => {
           </div>
         </button>
 
-        <button className="operationsbutton" onClick={handleCommit}>
+        <button className="cardoperationsbutton" onClick={handleCommit}>
           <div className="icon">
             <MdOutlineUploadFile />
           </div>
         </button>
 
         <button
-          className="operationsbutton"
+          className="cardoperationsbutton"
           onClick={() => props.deleteCard(props.id)}
         >
           <div className="icon">
