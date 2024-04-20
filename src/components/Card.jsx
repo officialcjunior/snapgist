@@ -82,13 +82,13 @@ const Card = (props) => {
         >
 
         <div className="icon">
-            {isEditing ? <MdOutlineSave /> : <MdCreate />}
+            {isEditing ? <MdOutlineSave title="Save locally" /> : <MdCreate />}
           </div>
         </button>
 
         <button className="cardoperationsbutton" onClick={handleCommit}>
           <div className="icon">
-            <MdOutlineUploadFile />
+            <MdOutlineUploadFile title="Save to Gist (Upload)" />
           </div>
         </button>
 
@@ -97,7 +97,7 @@ const Card = (props) => {
           onClick={() => props.deleteCard(props.id)}
         >
           <div className="icon">
-            <MdDelete />
+            <MdDelete title="Delete (locally)" />
           </div>
         </button>
 

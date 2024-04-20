@@ -164,7 +164,7 @@ const List = (props) => {
   return (
     <div className="list">
       <div className="add-card-container">
-        <CgAddR onClick={addCard}></CgAddR>
+        <CgAddR onClick={addCard} title="Create new Gist"></CgAddR>
       </div>
       <div className="card-container">
         {cards.map((card) => (

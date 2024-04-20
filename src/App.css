@@ -41,7 +41,7 @@
   overflow: auto; /* Enable scrolling for overflow content */
   box-shadow: 2px 2px 2px #555;
   background-color: #f5f3f3;
-  border-radius: 4%;
+  border-radius: 3.5%;
   border-top-width: 1px;
   border-top-style: solid;
   border-top-color: transparent;
@@ -195,22 +195,34 @@ textarea::-webkit-scrollbar-thumb:hover {
   font-size: 30px;
 }
 
+.help-button-container {
+  position: fixed;
+  top: 40px; /* Adjust top position as needed */
+  right: 50px; /* Adjust right position as needed */
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+}
+
 .add-card-form {
   display: flex;
   align-items: center;
 }
 
 .token-input-container {
-  /* Add styles for the token input container */
-  display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
   transition: all 3s ease; /* Add transition for smooth animation */  
+  width: 500px;
+  margin: 0 5px;
 }
 
 .token-input {
   width: 235px; /* Adjust width as needed */
   padding: 5px;
+  /* Center the input box inside token input container */
+  margin: 0 auto;
+
 }
 
 .token-provided {

@@ -34,10 +34,16 @@ function TokenInput({ onTokenChange, tokenProvided }) {
         tokenProvided ? "token-provided" : ""
       }`}
     >
+      <h4>snapgist is a snappy frontend for GitHub gists.</h4>
+      <p className="token-description">
+        To use snapgist, you need to provide a GitHub token with the{" "}
+        <code>gist</code> scope. Generate one <a href="https://github.com/settings/tokens/new">here.</a>
+
+      </p>
       <input
         type="password"
         className="token-input"
-        placeholder="Enter your GitHub token with gist scope"
+        placeholder="Paste your token here"
         onChange={onTokenChange}
       />
     </div>
