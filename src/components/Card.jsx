@@ -70,7 +70,9 @@ const Card = (props) => {
                 // Disable the textarea when not in edit mode or when it's not the active tab
                 onDoubleClick={() => setText("")}
                 // Call handleEdit function when textarea is clicked
-                disabled={!isEditing || file.filename !== activeTab}onClick={() => handleEdit()}
+                disabled={!isEditing || file.filename !== activeTab}
+                //onClick={() => handleEdit()}
+                onChange={(e) => setText(e.target.value)}
               />
             </div>
           ))}
