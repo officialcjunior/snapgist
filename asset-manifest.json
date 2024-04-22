@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/snapgist/static/css/main.584de053.css",
+    "main.js": "/snapgist/static/js/main.6888ad04.js",
+    "static/js/453.507b83b6.chunk.js": "/snapgist/static/js/453.507b83b6.chunk.js",
+    "index.html": "/snapgist/index.html",
+    "main.584de053.css.map": "/snapgist/static/css/main.584de053.css.map",
+    "main.6888ad04.js.map": "/snapgist/static/js/main.6888ad04.js.map",
+    "453.507b83b6.chunk.js.map": "/snapgist/static/js/453.507b83b6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.584de053.css",
+    "static/js/main.6888ad04.js"
+  ]
+}
